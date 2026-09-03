@@ -341,6 +341,54 @@ footer{padding:50px 0 70px}
   height:18px;
 }
 
+
+/* ===== EXPERIÊNCIAS INTERATIVAS ===== */
+.experiences-section{padding:110px 0 90px;background:#f7f4ee}
+.experience-tabs{display:flex;gap:10px;margin:32px 0 28px;flex-wrap:wrap}
+.exp-tab{border:1px solid var(--line);background:transparent;border-radius:999px;padding:12px 18px;font:700 13px "Space Grotesk",sans-serif;color:var(--ink);cursor:pointer;transition:.2s}
+.exp-tab:hover,.exp-tab.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.experience-panel{display:none;grid-template-columns:.72fr 1.28fr;gap:28px}
+.experience-panel.active{display:grid}
+.exp-copy{border:1px solid var(--line);border-radius:26px;background:var(--paper);padding:34px;display:flex;flex-direction:column;justify-content:center}
+.exp-number{font:700 12px "Space Grotesk",sans-serif;letter-spacing:.1em;color:var(--muted);margin-bottom:16px}
+.exp-copy h3{font:700 clamp(30px,4vw,52px)/.98 "Space Grotesk",sans-serif;letter-spacing:-.04em;margin:0 0 18px}
+.exp-copy p{color:var(--muted);max-width:430px}
+.exp-action{margin-top:26px;display:flex;gap:10px;flex-wrap:wrap}
+.demo-btn{border:0;border-radius:999px;padding:13px 18px;background:var(--ink);color:#fff;font-weight:700;cursor:pointer}
+.demo-btn.secondary{background:var(--lime);color:var(--ink)}
+.demo-screen{min-height:500px;background:#15191c;border-radius:26px;overflow:hidden;box-shadow:0 25px 60px rgba(17,17,17,.18);color:#f8f6f1;border:1px solid #282d30}
+.demo-topbar{height:58px;padding:0 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #2d3235}
+.demo-dots{display:flex;gap:6px}.demo-dots i{width:8px;height:8px;border-radius:50%;background:#686d70}
+.demo-title{font-size:11px;color:#aeb3b5}
+.demo-body{height:442px;display:flex}
+.demo-sidebar{width:145px;border-right:1px solid #2d3235;padding:18px 10px}
+.demo-sidebar button{width:100%;text-align:left;border:0;background:transparent;color:#9fa5a8;padding:10px;border-radius:9px;font-size:11px;cursor:pointer}
+.demo-sidebar button.active,.demo-sidebar button:hover{background:#252b2e;color:#fff}
+.demo-main{flex:1;padding:24px;overflow:hidden}
+.demo-main h4{font-size:18px;margin:0 0 18px}
+.demo-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.demo-card{background:#202528;border:1px solid #303639;border-radius:12px;padding:14px}
+.demo-card span{font-size:9px;color:#8f9699}.demo-card strong{display:block;font-size:21px;margin-top:7px}
+.demo-chart{height:175px;margin-top:12px;border:1px solid #303639;border-radius:12px;padding:15px;position:relative;overflow:hidden}
+.chart-svg{width:100%;height:100%}
+.demo-table{margin-top:12px;border:1px solid #303639;border-radius:12px;overflow:hidden}
+.demo-row{display:grid;grid-template-columns:1.4fr .7fr .7fr;gap:10px;padding:10px 12px;font-size:10px;border-bottom:1px solid #2b3033}
+.demo-row:last-child{border-bottom:0}.demo-row.head{color:#7f888c;font-weight:700}
+.flow-canvas{padding:25px 30px;height:100%;display:flex;flex-direction:column;justify-content:center;gap:10px}
+.flow-node{background:#202528;border:1px solid #343b3e;border-radius:14px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;opacity:.5;transform:translateX(-8px);transition:.35s}
+.flow-node .node-label{font-weight:700;font-size:12px}.flow-node.running,.flow-node.done{opacity:1;transform:translateX(0)}
+.flow-node.running{border-color:#d2d7d3}.flow-node.done .status{color:#b5d87b}.flow-node.running .status{color:#f0c76d}
+.flow-line{height:12px;width:2px;background:#4a5256;margin-left:28px;position:relative}.flow-line.running{background:#dff2bd}
+.data-controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.data-filter{border:1px solid #343b3e;background:#202528;color:#c9cdcf;padding:7px 11px;border-radius:999px;font-size:10px;cursor:pointer}
+.data-filter.active{background:#e2f3bb;color:#172019;border-color:#e2f3bb}
+.data-bars{display:flex;align-items:flex-end;gap:8px;height:145px;margin-top:12px;padding:15px 12px 10px;border:1px solid #303639;border-radius:12px}
+.data-bar{flex:1;background:#65706a;border-radius:5px 5px 2px 2px;min-width:8px;height:35%;transition:height .5s}
+.data-bar:nth-child(2){height:52%}.data-bar:nth-child(3){height:43%}.data-bar:nth-child(4){height:67%}.data-bar:nth-child(5){height:55%}.data-bar:nth-child(6){height:82%}.data-bar:nth-child(7){height:71%}
+.data-insight{margin-top:12px;background:#e2f3bb;color:#182018;border-radius:12px;padding:14px;font-size:11px}
+@media(max-width:900px){.experience-panel.active{grid-template-columns:1fr}}
+@media(max-width:600px){.exp-copy{padding:25px}.demo-sidebar{width:105px}.demo-main{padding:16px}.demo-cards{grid-template-columns:1fr}.demo-card:nth-child(3){display:none}}
+
 </style>
 </head>
 <body>
@@ -427,6 +475,45 @@ footer{padding:50px 0 70px}
   </div>
 </section>
 </main>
+
+
+<section class="experiences-section" id="experiencias">
+<div class="container">
+<div class="eyebrow">EXPERIMENTE ANTES DE CONTRATAR</div>
+<h2 class="section-title">Veja nossas soluções<br>em ação.</h2>
+<p class="section-sub">Não queremos apenas contar o que fazemos. Queremos mostrar como uma solução da re/crie labs pode funcionar na prática.</p>
+
+<div class="experience-tabs">
+<button class="exp-tab active" data-exp="systems">01 · Sistemas</button>
+<button class="exp-tab" data-exp="automation">02 · Automação</button>
+<button class="exp-tab" data-exp="data">03 · Dados</button>
+</div>
+
+<div class="experience-panel active" id="exp-systems">
+<div class="exp-copy"><div class="exp-number">01 / SISTEMAS</div><h3>rc\dash: um sistema pensado para sua operação.</h3><p>Explore o rc\dash, nosso painel de gestão simulado. Clique no menu e navegue pelos módulos para sentir como uma operação complexa pode virar uma experiência simples.</p><div class="exp-action"><button class="demo-btn" id="systemDemoBtn">Explorar rc\dash</button><button class="demo-btn secondary" data-scroll="#contato">Quero algo assim</button></div></div>
+<div class="demo-screen"><div class="demo-topbar"><div class="demo-dots"><i></i><i></i><i></i></div><div class="demo-title">rc\dash · operation hub</div><div class="demo-title">● online</div></div>
+<div class="demo-body"><div class="demo-sidebar" id="systemMenu"><button class="active" data-screen="overview">Dashboard</button><button data-screen="clients">Clientes</button><button data-screen="orders">Pedidos</button><button data-screen="reports">Relatórios</button></div>
+<div class="demo-main" id="systemContent"><h4>Visão geral</h4><div class="demo-cards"><div class="demo-card"><span>CLIENTES</span><strong>1.248</strong></div><div class="demo-card"><span>PEDIDOS</span><strong>384</strong></div><div class="demo-card"><span>FATURAMENTO</span><strong>R$ 182k</strong></div></div><div class="demo-chart"><svg class="chart-svg" viewBox="0 0 500 160" preserveAspectRatio="none"><polyline points="0,125 60,105 115,116 170,72 225,91 280,48 340,67 400,35 455,51 500,18" fill="none" stroke="#aeb8b1" stroke-width="3"/></svg></div></div></div></div>
+</div>
+
+<div class="experience-panel" id="exp-automation">
+<div class="exp-copy"><div class="exp-number">02 / AUTOMAÇÃO</div><h3>Menos tarefa manual. Mais operação acontecendo.</h3><p>Execute uma automação simulada: um pedido entra, passa pelas regras e chega ao destino sem alguém precisar repetir o processo manualmente.</p><div class="exp-action"><button class="demo-btn" id="runAutomation">▶ Executar automação</button><button class="demo-btn secondary" data-scroll="#contato">Automatizar meu processo</button></div></div>
+<div class="demo-screen"><div class="demo-topbar"><div class="demo-dots"><i></i><i></i><i></i></div><div class="demo-title">automation flow · pedido #384</div><div class="demo-title" id="automationState">aguardando</div></div><div class="flow-canvas">
+<div class="flow-node" data-step="0"><span class="node-label">① Novo pedido recebido</span><span class="status">○</span></div><div class="flow-line"></div>
+<div class="flow-node" data-step="1"><span class="node-label">② Validar informações</span><span class="status">○</span></div><div class="flow-line"></div>
+<div class="flow-node" data-step="2"><span class="node-label">③ Processar dados</span><span class="status">○</span></div><div class="flow-line"></div>
+<div class="flow-node" data-step="3"><span class="node-label">④ Atualizar sistema</span><span class="status">○</span></div><div class="flow-line"></div>
+<div class="flow-node" data-step="4"><span class="node-label">⑤ Processo concluído</span><span class="status">○</span></div>
+</div></div></div>
+
+<div class="experience-panel" id="exp-data">
+<div class="exp-copy"><div class="exp-number">03 / DADOS</div><h3>Dados que ajudam a decidir.</h3><p>Troque o período e veja indicadores e gráfico mudarem. Uma pequena demonstração de como dados podem virar visão para o negócio.</p><div class="exp-action"><button class="demo-btn secondary" data-scroll="#contato">Transformar meus dados</button></div></div>
+<div class="demo-screen"><div class="demo-topbar"><div class="demo-dots"><i></i><i></i><i></i></div><div class="demo-title">insight · performance</div><div class="demo-title">atualizado agora</div></div><div class="demo-main">
+<div class="data-controls"><button class="data-filter active" data-period="7">7 dias</button><button class="data-filter" data-period="30">30 dias</button><button class="data-filter" data-period="90">90 dias</button></div>
+<div class="demo-cards"><div class="demo-card"><span>VENDAS</span><strong id="salesValue">R$ 48k</strong></div><div class="demo-card"><span>CRESCIMENTO</span><strong id="growthValue">+23%</strong></div><div class="demo-card"><span>CONVERSÃO</span><strong id="conversionValue">8,4%</strong></div></div>
+<div class="data-bars"><div class="data-bar"></div><div class="data-bar"></div><div class="data-bar"></div><div class="data-bar"></div><div class="data-bar"></div><div class="data-bar"></div><div class="data-bar"></div></div>
+<div class="data-insight" id="dataInsight">Insight: sexta-feira concentra o melhor desempenho de vendas.</div></div></div></div>
+</div>
 
 <footer>
   <div class="container footer">
@@ -671,6 +758,30 @@ footer{padding:50px 0 70px}
     // Pequeno atraso para a entrada ficar suave.
     setTimeout(function(){ openBanner(false); }, 350);
   }
+})();
+</script>
+
+
+<script>
+(function(){
+const tabs=document.querySelectorAll(".exp-tab"), panels=document.querySelectorAll(".experience-panel");
+tabs.forEach(t=>t.onclick=()=>{tabs.forEach(x=>x.classList.remove("active"));panels.forEach(x=>x.classList.remove("active"));t.classList.add("active");document.getElementById("exp-"+t.dataset.exp).classList.add("active")});
+
+const content=document.getElementById("systemContent"), buttons=document.querySelectorAll("#systemMenu button");
+const screens={
+overview:`<h4>Visão geral</h4><div class="demo-cards"><div class="demo-card"><span>CLIENTES</span><strong>1.248</strong></div><div class="demo-card"><span>PEDIDOS</span><strong>384</strong></div><div class="demo-card"><span>FATURAMENTO</span><strong>R$ 182k</strong></div></div><div class="demo-chart"><svg class="chart-svg" viewBox="0 0 500 160" preserveAspectRatio="none"><polyline points="0,125 60,105 115,116 170,72 225,91 280,48 340,67 400,35 455,51 500,18" fill="none" stroke="#aeb8b1" stroke-width="3"/></svg></div>`,
+clients:`<h4>Clientes</h4><div class="demo-table"><div class="demo-row head"><span>Cliente</span><span>Status</span><span>Pedidos</span></div><div class="demo-row"><span>Alfa Ltda.</span><span>Ativo</span><span>48</span></div><div class="demo-row"><span>Nova Co.</span><span>Ativo</span><span>32</span></div><div class="demo-row"><span>Studio 21</span><span>Ativo</span><span>27</span></div></div>`,
+orders:`<h4>Pedidos</h4><div class="demo-cards"><div class="demo-card"><span>HOJE</span><strong>42</strong></div><div class="demo-card"><span>EM PROCESSO</span><strong>18</strong></div><div class="demo-card"><span>CONCLUÍDOS</span><strong>24</strong></div></div><div class="demo-table"><div class="demo-row head"><span>Pedido</span><span>Status</span><span>Valor</span></div><div class="demo-row"><span>#384</span><span>Processando</span><span>R$ 920</span></div><div class="demo-row"><span>#383</span><span>Concluído</span><span>R$ 1.280</span></div></div>`,
+reports:`<h4>Relatórios</h4><div class="demo-cards"><div class="demo-card"><span>RELATÓRIOS</span><strong>18</strong></div><div class="demo-card"><span>EXPORTADOS</span><strong>64</strong></div><div class="demo-card"><span>AGENDADOS</span><strong>7</strong></div></div><div class="data-insight">Relatório mensal pronto para análise e compartilhamento.</div>`};
+buttons.forEach(b=>b.onclick=()=>{buttons.forEach(x=>x.classList.remove("active"));b.classList.add("active");content.innerHTML=screens[b.dataset.screen]});
+document.getElementById("systemDemoBtn").onclick=()=>{buttons[1].click();setTimeout(()=>buttons[0].click(),700)};
+
+const run=document.getElementById("runAutomation"), nodes=[...document.querySelectorAll(".flow-node")], lines=[...document.querySelectorAll(".flow-line")];
+run.onclick=async()=>{run.disabled=true;nodes.forEach(n=>{n.classList.remove("running","done");n.querySelector(".status").textContent="○"});document.getElementById("automationState").textContent="executando";for(let i=0;i<nodes.length;i++){nodes[i].classList.add("running");nodes[i].querySelector(".status").textContent="●";if(lines[i])lines[i].classList.add("running");await new Promise(r=>setTimeout(r,500));nodes[i].classList.remove("running");nodes[i].classList.add("done");nodes[i].querySelector(".status").textContent="✓"}document.getElementById("automationState").textContent="concluído";run.disabled=false};
+
+const sets={7:["R$ 48k","+23%","8,4%",[35,52,43,67,55,82,71],"Insight: sexta-feira concentra o melhor desempenho de vendas."],30:["R$ 182k","+31%","9,1%",[42,58,51,72,64,89,77],"Insight: o crescimento acelerou na segunda metade do período."],90:["R$ 514k","+47%","10,2%",[48,63,56,78,69,94,84],"Insight: o canal digital é responsável pela maior parte do crescimento."]};
+document.querySelectorAll(".data-filter").forEach(f=>f.onclick=()=>{document.querySelectorAll(".data-filter").forEach(x=>x.classList.remove("active"));f.classList.add("active");let d=sets[f.dataset.period];document.getElementById("salesValue").textContent=d[0];document.getElementById("growthValue").textContent=d[1];document.getElementById("conversionValue").textContent=d[2];document.getElementById("dataInsight").textContent=d[4];document.querySelectorAll(".data-bar").forEach((b,i)=>b.style.height=d[3][i]+"%")});
+document.querySelectorAll("[data-scroll]").forEach(b=>b.onclick=()=>{let t=document.querySelector(b.dataset.scroll);if(t)t.scrollIntoView({behavior:"smooth"})});
 })();
 </script>
 
